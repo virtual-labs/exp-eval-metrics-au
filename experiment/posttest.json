@@ -2,38 +2,89 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "How can overfitting be reduced in machine learning models?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Using a more complex model",
+        "b": "Increasing the training data size",
+        "c": "Decreasing the number of training epochs",
+        "d": "Removing relevant features"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "A complex model increases the risk of overfitting.",
+        "b": "Correct! More training data helps the model generalize better.",
+        "c": "This might help but is not always a reliable method.",
+        "d": "Removing relevant features can lead to underfitting."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which of the following techniques helps prevent underfitting?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Using a more complex model",
+        "b": "Reducing the number of features",
+        "c": "Decreasing the amount of training data",
+        "d": "Reducing the number of training iterations"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Correct! A more complex model can capture more patterns, reducing underfitting.",
+        "b": "Reducing features can remove useful information and increase underfitting.",
+        "c": "More data helps models learn better and reduces both overfitting and underfitting.",
+        "d": "More training iterations allow the model to learn better patterns."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is an ideal characteristic of a well-generalized machine learning model?",
+      "answers": {
+        "a": "Low training accuracy and high test accuracy",
+        "b": "High training accuracy but low test accuracy",
+        "c": "Similar accuracy on both training and test datasets",
+        "d": "A model that memorizes training data completely"
+      },
+      "explanations": {
+        "a": "This rarely happens; a generalized model should perform well on both sets.",
+        "b": "This indicates overfitting, not generalization.",
+        "c": "Correct! A good model should have similar performance on both training and test data.",
+        "d": "Memorization leads to overfitting and poor performance on new data."
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which dataset is used to evaluate a machine learning model's performance before deployment?",
+      "answers": {
+        "a": "Training set",
+        "b": "Test set",
+        "c": "Validation set",
+        "d": "Entire dataset"
+      },
+      "explanations": {
+        "a": "The training set is used for learning, not evaluation.",
+        "b": "Correct! The test set is used for final evaluation before deployment.",
+        "c": "The validation set is used for hyperparameter tuning, not final evaluation.",
+        "d": "Using the entire dataset means no independent evaluation, which is not ideal."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following is an example of an unsupervised learning problem?",
+      "answers": {
+        "a": "Predicting house prices based on square footage",
+        "b": "Detecting spam emails based on labeled examples",
+        "c": "Grouping customers based on purchasing behavior",
+        "d": "Classifying images of cats and dogs"
+      },
+      "explanations": {
+        "a": "House price prediction is a supervised regression task.",
+        "b": "Spam detection is a supervised classification problem.",
+        "c": "Correct! Customer segmentation is a clustering problem, which is unsupervised learning.",
+        "d": "Classifying images requires labeled data, making it a supervised task."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
     }
   ]
 }

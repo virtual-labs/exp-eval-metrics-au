@@ -2,37 +2,71 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the primary cause of overfitting in machine learning models?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Insufficient training data",
+        "b": "Using too few parameters in the model",
+        "c": "Learning noise instead of general patterns",
+        "d": "Using a very simple model"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "More data helps generalization but isn't the primary cause.",
+        "b": "Too few parameters usually cause underfitting, not overfitting.",
+        "c": "Correct! Overfitting happens when the model memorizes the noise instead of learning general patterns.",
+        "d": "A simple model usually leads to underfitting, not overfitting."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which of the following is a common symptom of underfitting?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "High training accuracy but low test accuracy",
+        "b": "Low accuracy on both training and test data",
+        "c": "Model performing exceptionally well on unseen data",
+        "d": "A high number of parameters leading to complex decision boundaries"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "This is a sign of overfitting, not underfitting.",
+        "b": "Correct! Underfitting happens when the model is too simple to capture patterns, leading to poor accuracy on both datasets.",
+        "c": "A well-generalized model should perform well, but not exceptionally better than on training data.",
+        "d": "A high number of parameters usually leads to overfitting."
       },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Why is a train/test split necessary in machine learning?",
+      "answers": {
+        "a": "To make the model memorize the test data",
+        "b": "To evaluate the model's performance on unseen data",
+        "c": "To prevent the model from learning any patterns",
+        "d": "To increase the training accuracy"
+      },
+      "explanations": {
+        "a": "Memorizing test data leads to overfitting, which we want to avoid.",
+        "b": "Correct! A train/test split helps assess the model's generalization ability.",
+        "c": "The goal is to learn patterns, but avoid memorization.",
+        "d": "A train/test split is for evaluation, not improving training accuracy."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the primary difference between supervised and unsupervised learning?",
+      "answers": {
+        "a": "Supervised learning requires labeled data, while unsupervised learning does not",
+        "b": "Unsupervised learning uses neural networks, while supervised learning does not",
+        "c": "Supervised learning is only used for regression tasks",
+        "d": "Unsupervised learning always provides better accuracy"
+      },
+      "explanations": {
+        "a": "Correct! Supervised learning works with labeled data, while unsupervised learning identifies patterns without labels.",
+        "b": "Both learning types can use neural networks.",
+        "c": "Supervised learning is used for both classification and regression.",
+        "d": "Accuracy depends on the problem; one is not always better than the other."
+      },
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
