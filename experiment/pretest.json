@@ -64,9 +64,43 @@
         "a": "Correct! Supervised learning works with labeled data, while unsupervised learning identifies patterns without labels.",
         "b": "Both learning types can use neural networks.",
         "c": "Supervised learning is used for both classification and regression.",
-        "d": "Accuracy depends on the problem; one is not always better than the other."
+        "d": "Accuracy depends on the problem; one is not always better."
       },
       "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "When a model performs very well on training data but poorly on new data, it is called:",
+      "answers": {
+        "a": "Underfitting",
+        "b": "Overfitting",
+        "c": "Good generalization",
+        "d": "High bias"
+      },
+      "explanations": {
+        "a": "Underfitting shows poor performance on training data too.",
+        "b": "Correct! This large gap between training and test performance is the definition of overfitting.",
+        "c": "Good generalization means similar performance on both.",
+        "d": "High bias alone would hurt training performance as well."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of these is usually the best first step to fix overfitting?",
+      "answers": {
+        "a": "Make the model much more complex",
+        "b": "Get more training data",
+        "c": "Remove all regularization",
+        "d": "Use a linear model only"
+      },
+      "explanations": {
+        "a": "Increasing complexity usually makes overfitting worse.",
+        "b": "Correct! More diverse training data is often the most effective and simplest way to reduce overfitting.",
+        "c": "Removing regularization increases overfitting.",
+        "d": "A linear model may cause underfitting instead."
+      },
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
   ]

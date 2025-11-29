@@ -1,2 +1,1 @@
-### Aim of the experiment
 To investigate the impact of overfitting in machine learning models and understand the importance of proper data splitting for effective model evaluation. This study will analyze how overfitting affects model performance, the consequences of poor generalization, and the role of train-test-validation splits in preventing overfitting and ensuring reliable model assessment
