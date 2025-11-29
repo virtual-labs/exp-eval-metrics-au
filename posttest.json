@@ -1,0 +1,107 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "A model has very low error on training data but very high error on validation data. This is a clear sign of:",
+      "answers": {
+        "a": "Underfitting",
+        "b": "Overfitting",
+        "c": "Good generalization",
+        "d": "Insufficient regularization strength"
+      },
+      "explanations": {
+        "a": "Underfitting shows high error on both training and validation.",
+        "b": "Correct! Large gap between training and validation performance indicates overfitting.",
+        "c": "Good generalization means similar low error on both sets.",
+        "d": "This is a consequence, not the diagnosis."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following is NOT an effective way to reduce overfitting?",
+      "answers": {
+        "a": "Adding dropout layers",
+        "b": "Using L2 regularization",
+        "c": "Increasing model depth from 10 to 100 layers",
+        "d": "Applying early stopping"
+      },
+      "explanations": {
+        "a": "Dropout reduces overfitting by randomly ignoring neurons.",
+        "b": "L2 regularization penalizes large weights.",
+        "c": "Correct! Dramatically increasing model complexity usually worsens overfitting.",
+        "d": "Early stopping prevents excessive fitting to noise."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In the bias-variance tradeoff, underfitting is mainly caused by:",
+      "answers": {
+        "a": "High variance",
+        "b": "High bias",
+        "c": "Low bias and low variance",
+        "d": "Too much training data"
+      },
+      "explanations": {
+        "a": "High variance causes overfitting.",
+        "b": "Correct! Underfitting occurs when the model is too simple and has high bias.",
+        "c": "This is ideal but rare.",
+        "d": "More data helps reduce overfitting, not cause underfitting."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the main purpose of a validation set during training?",
+      "answers": {
+        "a": "To train the model's weights",
+        "b": "To make the final performance report",
+        "c": "To tune hyperparameters and monitor for overfitting",
+        "d": "To replace the test set when data is limited"
+      },
+      "explanations": {
+        "a": "Weights are updated only on the training set.",
+        "b": "Final report uses the untouched test set.",
+        "c": "Correct! Validation set is used for model selection, early stopping, and hyperparameter tuning.",
+        "d": "Test set must remain isolated; validation is separate."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which technique directly reduces model variance without significantly increasing bias?",
+      "answers": {
+        "a": "Using a deeper neural network",
+        "b": "Collecting more training examples",
+        "c": "Switching from a decision tree to a linear model",
+        "d": "Removing all regularization"
+      },
+      "explanations": {
+        "a": "Deeper networks increase variance.",
+        "b": "Correct! More data is the most effective way to reduce variance (overfitting).",
+        "c": "This reduces variance but greatly increases bias.",
+        "d": "This increases variance dramatically."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A model performs poorly on the training set itself. The best first step to improve it is:",
+      "answers": {
+        "a": "Add strong regularization",
+        "b": "Increase model capacity or train longer",
+        "c": "Apply dropout",
+        "d": "Reduce the learning rate drastically"
+      },
+      "explanations": {
+        "a": "Regularization will make performance even worse.",
+        "b": "Correct! If training error is high, the model is underfitting — increase capacity or train more training.",
+        "c": "Dropout reduces capacity → worsens underfitting.",
+        "d": "May slow learning but doesn't solve capacity issue."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    }
+  ]
+}
