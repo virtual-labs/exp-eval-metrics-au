@@ -1,6 +1,6 @@
-### 1. Overfitting and Underfitting
+#### 1. Overfitting and Underfitting
 
-#### 1.1 Overfitting
+##### 1.1 Overfitting
 
 **Definition**  
 Overfitting occurs when a machine learning model learns both the underlying patterns and the random fluctuations (noise) present in the training data. As a result, the model performs extremely well on the training set but exhibits poor generalization performance on unseen data.
@@ -25,9 +25,9 @@ Overfitting occurs when a machine learning model learns both the underlying patt
 - Model pruning, architecture simplification, or reducing capacity
 - Ensemble methods (bagging, random forests) to reduce variance
 
----
 
-#### 1.2 Underfitting
+
+##### 1.2 Underfitting
 
 **Definition**  
 Underfitting occurs when a model is too simple (has insufficient capacity) to capture the true underlying structure or relationships in the data.
@@ -48,9 +48,9 @@ Underfitting occurs when a model is too simple (has insufficient capacity) to ca
 - Decrease regularization strength
 - Allow the model to train for more epochs or use better optimization algorithms
 
----
 
-#### 1.3 Bias–Variance Trade-off
+
+##### 1.3 Bias–Variance Trade-off
 
 The generalization error of a model can be decomposed as:  
 **Generalization Error = Bias² + Variance + Irreducible Error**
@@ -61,7 +61,7 @@ The generalization error of a model can be decomposed as:
 
 The goal is to find the optimal model complexity that minimizes the sum of bias² and variance.
 
-### 2. Dataset Splitting Strategies
+#### 2. Dataset Splitting Strategies
 
 | Split          | Purpose                                                  | Typical Proportion                  | Notes                                           |
 |----------------|----------------------------------------------------------|-------------------------------------|-------------------------------------------------|
@@ -75,9 +75,9 @@ The goal is to find the optimal model complexity that minimizes the sum of bias�
 - For small datasets: k-fold cross-validation (commonly k=5 or 10)
 - For very large datasets: single train/validation split is often sufficient
 
-### 3. Evaluation Metrics
+#### 3. Evaluation Metrics
 
-#### 3.1 Classification Metrics
+##### 3.1 Classification Metrics
 
 | Metric          | Formula                                              | Interpretation                                      | Best Used When                              |
 |-----------------|------------------------------------------------------|-----------------------------------------------------|---------------------------------------------|
@@ -88,7 +88,7 @@ The goal is to find the optimal model complexity that minimizes the sum of bias�
 | ROC-AUC         | Area under the ROC curve                             | Ability to discriminate classes across thresholds   | Threshold-independent model comparison      |
 | PR-AUC          | Area under Precision-Recall curve                    | Performance on highly imbalanced datasets           | Highly skewed positive/negative ratio       |
 
-#### 3.2 Regression Metrics
+##### 3.2 Regression Metrics
 
 | Metric                  | Formula                                                               | Properties                                      | Typical Use Case                              |
 |-------------------------|-----------------------------------------------------------------------|-------------------------------------------------|-----------------------------------------------|
@@ -96,7 +96,7 @@ The goal is to find the optimal model complexity that minimizes the sum of bias�
 | Mean Squared Error (MSE) | (1/n) Σ (yᵢ − ŷᵢ)²                                                   | Differentiable, penalizes large errors heavily  | Most optimization algorithms minimize MSE     |
 
 
-### 4. Summary of Key Relationships
+#### 4. Summary of Key Relationships
 
 | Situation                     | Training Error | Validation/Test Error | Diagnosis       | Action                              |
 |-------------------------------|----------------|-----------------------|-----------------|-------------------------------------|
