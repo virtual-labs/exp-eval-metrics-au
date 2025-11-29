@@ -2,88 +2,105 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "How can overfitting be reduced in machine learning models?",
+      "question": "A model has very low error on training data but very high error on validation data. This is a clear sign of:",
       "answers": {
-        "a": "Using a more complex model",
-        "b": "Increasing the training data size",
-        "c": "Decreasing the number of training epochs",
-        "d": "Removing relevant features"
+        "a": "Underfitting",
+        "b": "Overfitting",
+        "c": "Good generalization",
+        "d": "Insufficient regularization strength"
       },
       "explanations": {
-        "a": "A complex model increases the risk of overfitting.",
-        "b": "Correct! More training data helps the model generalize better.",
-        "c": "This might help but is not always a reliable method.",
-        "d": "Removing relevant features can lead to underfitting."
+        "a": "Underfitting shows high error on both training and validation.",
+        "b": "Correct! Large gap between training and validation performance indicates overfitting.",
+        "c": "Good generalization means similar low error on both sets.",
+        "d": "This is a consequence, not the diagnosis."
       },
       "correctAnswer": "b",
       "difficulty": "intermediate"
     },
     {
-      "question": "Which of the following techniques helps prevent underfitting?",
+      "question": "Which of the following is NOT an effective way to reduce overfitting?",
       "answers": {
-        "a": "Using a more complex model",
-        "b": "Reducing the number of features",
-        "c": "Decreasing the amount of training data",
-        "d": "Reducing the number of training iterations"
+        "a": "Adding dropout layers",
+        "b": "Using L2 regularization",
+        "c": "Increasing model depth from 10 to 100 layers",
+        "d": "Applying early stopping"
       },
       "explanations": {
-        "a": "Correct! A more complex model can capture more patterns, reducing underfitting.",
-        "b": "Reducing features can remove useful information and increase underfitting.",
-        "c": "More data helps models learn better and reduces both overfitting and underfitting.",
-        "d": "More training iterations allow the model to learn better patterns."
-      },
-      "correctAnswer": "a",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "What is an ideal characteristic of a well-generalized machine learning model?",
-      "answers": {
-        "a": "Low training accuracy and high test accuracy",
-        "b": "High training accuracy but low test accuracy",
-        "c": "Similar accuracy on both training and test datasets",
-        "d": "A model that memorizes training data completely"
-      },
-      "explanations": {
-        "a": "This rarely happens; a generalized model should perform well on both sets.",
-        "b": "This indicates overfitting, not generalization.",
-        "c": "Correct! A good model should have similar performance on both training and test data.",
-        "d": "Memorization leads to overfitting and poor performance on new data."
+        "a": "Dropout reduces overfitting by randomly ignoring neurons.",
+        "b": "L2 regularization penalizes large weights.",
+        "c": "Correct! Dramatically increasing model complexity usually worsens overfitting.",
+        "d": "Early stopping prevents excessive fitting to noise."
       },
       "correctAnswer": "c",
       "difficulty": "intermediate"
     },
     {
-      "question": "Which dataset is used to evaluate a machine learning model's performance before deployment?",
+      "question": "In the bias-variance tradeoff, underfitting is mainly caused by:",
       "answers": {
-        "a": "Training set",
-        "b": "Test set",
-        "c": "Validation set",
-        "d": "Entire dataset"
+        "a": "High variance",
+        "b": "High bias",
+        "c": "Low bias and low variance",
+        "d": "Too much training data"
       },
       "explanations": {
-        "a": "The training set is used for learning, not evaluation.",
-        "b": "Correct! The test set is used for final evaluation before deployment.",
-        "c": "The validation set is used for hyperparameter tuning, not final evaluation.",
-        "d": "Using the entire dataset means no independent evaluation, which is not ideal."
+        "a": "High variance causes overfitting.",
+        "b": "Correct! Underfitting occurs when the model is too simple and has high bias.",
+        "c": "This is ideal but rare.",
+        "d": "More data helps reduce overfitting, not cause underfitting."
       },
       "correctAnswer": "b",
       "difficulty": "intermediate"
     },
     {
-      "question": "Which of the following is an example of an unsupervised learning problem?",
+      "question": "What is the main purpose of a validation set during training?",
       "answers": {
-        "a": "Predicting house prices based on square footage",
-        "b": "Detecting spam emails based on labeled examples",
-        "c": "Grouping customers based on purchasing behavior",
-        "d": "Classifying images of cats and dogs"
+        "a": "To train the model's weights",
+        "b": "To make the final performance report",
+        "c": "To tune hyperparameters and monitor for overfitting",
+        "d": "To replace the test set when data is limited"
       },
       "explanations": {
-        "a": "House price prediction is a supervised regression task.",
-        "b": "Spam detection is a supervised classification problem.",
-        "c": "Correct! Customer segmentation is a clustering problem, which is unsupervised learning.",
-        "d": "Classifying images requires labeled data, making it a supervised task."
+        "a": "Weights are updated only on the training set.",
+        "b": "Final report uses the untouched test set.",
+        "c": "Correct! Validation set is used for model selection, early stopping, and hyperparameter tuning.",
+        "d": "Test set must remain isolated; validation is separate."
       },
       "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which technique directly reduces model variance without significantly increasing bias?",
+      "answers": {
+        "a": "Using a deeper neural network",
+        "b": "Collecting more training examples",
+        "c": "Switching from a decision tree to a linear model",
+        "d": "Removing all regularization"
+      },
+      "explanations": {
+        "a": "Deeper networks increase variance.",
+        "b": "Correct! More data is the most effective way to reduce variance (overfitting).",
+        "c": "This reduces variance but greatly increases bias.",
+        "d": "This increases variance dramatically."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "A model performs poorly on the training set itself. The best first step to improve it is:",
+      "answers": {
+        "a": "Add strong regularization",
+        "b": "Increase model capacity or train longer",
+        "c": "Apply dropout",
+        "d": "Reduce the learning rate drastically"
+      },
+      "explanations": {
+        "a": "Regularization will make performance even worse.",
+        "b": "Correct! If training error is high, the model is underfitting — increase capacity or train more training.",
+        "c": "Dropout reduces capacity → worsens underfitting.",
+        "d": "May slow learning but doesn't solve capacity issue."
+      },
+      "correctAnswer": "b",
       "difficulty": "intermediate"
     }
   ]

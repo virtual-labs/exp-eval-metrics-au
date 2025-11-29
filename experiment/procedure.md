@@ -1,18 +1,17 @@
-### Procedure
-Select a dataset from the dropdown, then click the "Load Data" button to load the dataset.
-<div><img src="./images/data1.png" alt="overflow-underflow"></div>
+<p>Select a dataset from the dropdown and click the <strong>Load Data</strong> button to load the dataset.</p>
+<img src="./images/data1.png" alt="data-loading">
 
-Adjust the train-test split ratio using the slider below.
-<div><img src="./images/data2.png" alt="overflow-underflow"></div>
+<p>Adjust the train–test split ratio using the slider below.</p>
+<img src="./images/data2.png" alt="train-test-split">
 
-Observe the training dataset and confusion matrices based on the training.
-<div><img src="./images/data3.png" alt="overflow-underflow"></div>
+<p>Observe the training dataset and the confusion matrix based on the training results.</p>
+<img src="./images/data3.png" alt="training-confusion-matrix">
 
-Observe the testing dataset, confusion matrices, and the performance metrics analysis.
-<div><img src="./images/data5.png" alt="overflow-underflow"></div>
+<p>Observe the testing dataset, the confusion matrix, and the performance metrics analysis.</p>
+<img src="./images/data5.png" alt="testing-confusion-matrix">
 
-Click the "Compare Training vs Testing" button to view the comparison of training and testing values. Observe the model fit analysis based on the comparison.
-<div><img src="./images/data6.png" alt="overflow-underflow"></div>
+<p>Click the <strong>Compare Training vs Testing</strong> button to view the comparison of training and testing values, and observe the model fit analysis based on this comparison.</p>
+<img src="./images/data6.png" alt="comparison-analysis">
 
-Observe the Linear Regression model to predict salaries based on years of experience. Enter a value to see the predicted salary. Observe the Model Evaluation values.
-<div><img src="./images/data7.png" alt="overflow-underflow"></div>
+<p>Observe the Linear Regression model used to predict salaries based on years of experience. Enter a value to see the predicted salary and review the model evaluation metrics.</p>
+<img src="./images/data7.png" alt="linear-regression">

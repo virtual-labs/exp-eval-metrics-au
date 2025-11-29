@@ -1,66 +1,106 @@
-### Theory 
-##### **Overfitting and Underfitting**  
-These are common issues in machine learning that affect a model's ability to generalize to new data.  
+### 1. Overfitting and Underfitting
 
-##### **Overfitting**  
-- Overfitting happens when a model learns the training data too well, including noise and outliers, instead of capturing the general patterns.  
-- This results in high accuracy on the training data but poor generalization to unseen data, leading to poor test performance.  
-- Overfitting often occurs when the model is too complex (e.g., too many parameters, deep neural networks with excessive layers).  
-- **Solutions to Overfitting:**
-  - **Regularization (L1/L2 penalties)** – Reduces the model complexity by penalizing large coefficients.  
-  - **Pruning (for Decision Trees)** – Reduces the depth of the tree to prevent it from memorizing noise.  
-  - **Dropout (for Neural Networks)** – Randomly removes neurons during training to prevent reliance on specific features.  
-  - **Early Stopping** – Stops training when validation loss stops improving.  
-  - **More Training Data** – Helps the model generalize better.  
+#### 1.1 Overfitting
 
-##### **Underfitting**  
-- Underfitting occurs when a model is too simple to capture the underlying patterns in data.  
-- It results in both high training error and test error.  
-- Common causes include insufficient model complexity, too few training iterations, or inadequate feature representation.  
-- **Solutions to Underfitting:**
-  - **Increase Model Complexity** – Use a more sophisticated model (e.g., moving from linear regression to polynomial regression).  
-  - **Feature Engineering** – Add relevant features or transformations to better represent the data.  
-  - **Reduce Regularization** – Loosening L1/L2 penalties can help the model learn more complex patterns.  
+**Definition**  
+Overfitting occurs when a machine learning model learns both the underlying patterns and the random fluctuations (noise) present in the training data. As a result, the model performs extremely well on the training set but exhibits poor generalization performance on unseen data.
+
+**Key Characteristics**
+- Very low training error
+- Significantly higher validation/test error (large generalization gap)
+- High variance and low bias
+
+**Common Causes**
+- Model complexity excessively high relative to the amount of training data (e.g., very deep neural networks, high-degree polynomials)
+- Limited or non-representative training data
+- Lack of regularization
+- Training has continued far beyond the point of optimal validation performance
+
+**Prevention and Mitigation Techniques**
+- L1 (Lasso), L2 (Ridge), or Elastic Net regularization
+- Dropout, DropConnect, and stochastic depth (in neural networks)
+- Early stopping using a validation set
+- Data augmentation and acquiring additional training examples
+- Cross-validation for more reliable performance estimation
+- Model pruning, architecture simplification, or reducing capacity
+- Ensemble methods (bagging, random forests) to reduce variance
+
+---
+
+#### 1.2 Underfitting
+
+**Definition**  
+Underfitting occurs when a model is too simple (has insufficient capacity) to capture the true underlying structure or relationships in the data.
+
+**Key Characteristics**
+- High error on both training and validation/test sets
+- High bias and low variance
+
+**Common Causes**
+- Model capacity too low for the complexity of the problem (e.g., fitting a linear model to nonlinear data)
+- Overly strong regularization
+- Insufficient training duration (especially for iterative algorithms)
+- Inadequate or poorly engineered features
+
+**Remediation Techniques**
+- Increase model capacity (add layers, neurons, higher-degree terms, etc.)
+- Perform feature engineering or use more expressive feature representations
+- Decrease regularization strength
+- Allow the model to train for more epochs or use better optimization algorithms
+
+---
+
+#### 1.3 Bias–Variance Trade-off
+
+The generalization error of a model can be decomposed as:  
+**Generalization Error = Bias² + Variance + Irreducible Error**
+
+- **Bias**: Error arising from overly simplistic assumptions in the learning algorithm (dominant in underfitting)
+- **Variance**: Error arising from sensitivity to small fluctuations in the training set (dominant in overfitting)
+- **Irreducible Error**: Inherent noise in the data that cannot be eliminated
+
+The goal is to find the optimal model complexity that minimizes the sum of bias² and variance.
+
+### 2. Dataset Splitting Strategies
+
+| Split          | Purpose                                                  | Typical Proportion                  | Notes                                           |
+|----------------|----------------------------------------------------------|-------------------------------------|-------------------------------------------------|
+| Training set   | Parameter learning (weights, coefficients)               | 60–98%                              | Primary data used for gradient-based optimization |
+| Validation set | Hyperparameter tuning and early stopping decisions       | 10–20% (or 1–2% on very large datasets) | Never used for gradient updates                 |
+| Test set       | Final unbiased evaluation of model performance           | 10–20%                              | Seen only once, after all tuning is complete    |
+
+**Best Practices**
+- Keep test set completely isolated until final evaluation
+- Use stratified splitting for classification to preserve class distribution
+- For small datasets: k-fold cross-validation (commonly k=5 or 10)
+- For very large datasets: single train/validation split is often sufficient
+
+### 3. Evaluation Metrics
+
+#### 3.1 Classification Metrics
+
+| Metric          | Formula                                              | Interpretation                                      | Best Used When                              |
+|-----------------|------------------------------------------------------|-----------------------------------------------------|---------------------------------------------|
+| Accuracy        | (TP + TN) / (TP + TN + FP + FN)                      | Overall correctness                                 | Classes are balanced                        |
+| Precision       | TP / (TP + FP)                                       | Proportion of positive predictions that are correct | Minimizing false positives is critical      |
+| Recall (Sensitivity) | TP / (TP + FN)                                  | Proportion of actual positives correctly identified | Minimizing false negatives is critical      |
+| F1-Score        | 2 × (Precision × Recall) / (Precision + Recall)      | Harmonic mean of precision and recall               | Imbalanced classes, need single metric      |
+| ROC-AUC         | Area under the ROC curve                             | Ability to discriminate classes across thresholds   | Threshold-independent model comparison      |
+| PR-AUC          | Area under Precision-Recall curve                    | Performance on highly imbalanced datasets           | Highly skewed positive/negative ratio       |
+
+#### 3.2 Regression Metrics
+
+| Metric                  | Formula                                                               | Properties                                      | Typical Use Case                              |
+|-------------------------|-----------------------------------------------------------------------|-------------------------------------------------|-----------------------------------------------|
+| Mean Absolute Error (MAE) | (1/n) Σ |yᵢ − ŷᵢ|                                      | Robust to outliers, interpretable in original units | Errors are equally costly                     |
+| Mean Squared Error (MSE) | (1/n) Σ (yᵢ − ŷᵢ)²                                                   | Differentiable, penalizes large errors heavily  | Most optimization algorithms minimize MSE     |
 
 
+### 4. Summary of Key Relationships
 
-##### **Train/Test Split**  
-- The train/test split is a crucial technique to evaluate machine learning models.  
-- **Training Set** – The dataset used to train the model. The model learns patterns and adjusts parameters based on this data.  
-- **Testing Set** – The dataset used to evaluate the model's generalization to new, unseen data.  
-- A common split ratio is **70% training / 30% testing**, but it can be adjusted (e.g., 80/20, 60/40) based on dataset size and use case.  
-- In some cases, a **validation set** (another split of data) is used to fine-tune hyperparameters before testing.  
-
-
-
-##### **Evaluation Metrics**  
-Evaluation metrics measure how well a model performs on different tasks.  
-
-##### **Classification Metrics:**  
-1. **Accuracy** = (Correct Predictions) / (Total Predictions)  
-   - Measures how often the model predicts correctly.  
-   - Works well when classes are balanced but can be misleading for imbalanced datasets.  
-
-2. **Precision (Positive Predictive Value)** = TP / (TP + FP)  
-   - The proportion of correctly predicted positive instances among all predicted positives.  
-   - High precision means fewer false positives.  
-
-3. **Recall (Sensitivity / True Positive Rate)** = TP / (TP + FN)  
-   - Measures how well the model identifies all actual positives.  
-   - High recall means fewer false negatives.  
-
-4. **F1-Score** = 2 × (Precision × Recall) / (Precision + Recall)  
-   - The harmonic mean of precision and recall.  
-   - Useful when we need a balance between precision and recall.  
-
-5. **ROC-AUC (Receiver Operating Characteristic – Area Under Curve)**  
-   - A graphical measure of classification performance at different thresholds.  
-   - AUC close to 1 means good performance, while AUC near 0.5 indicates random guessing.  
-
-##### **Regression Metrics:**  
-1. **Mean Absolute Error (MAE)** = \( \frac{1}{n} \sum | y_{\text{true}} - y_{\text{pred}} | \)  
-   - Measures the average absolute difference between actual and predicted values.  
-
-2. **Mean Squared Error (MSE)** = \( \frac{1}{n} \sum (y_{\text{true}} - y_{\text{pred}})^2 \)  
-   - Squares the errors, giving more weight to larger errors.  
+| Situation                     | Training Error | Validation/Test Error | Diagnosis       | Action                              |
+|-------------------------------|----------------|-----------------------|-----------------|-------------------------------------|
+| Overfitting                   | Very low       | High                  | High variance   | Regularize, simplify, more data     |
+| Underfitting                  | High           | High                  | High bias       | Increase capacity, better features  |
+| Good generalization          | Low            | Low (close to training) | Balanced bias-variance | Monitor and deploy                |
 
